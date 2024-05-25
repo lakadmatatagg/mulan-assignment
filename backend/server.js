@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // Use CORS middleware to allow requests from your Angular frontend
 app.use(cors({
-  origin: 'http://localhost:4200' // Replace with your Angular frontend's URL
+  origin: 'https://tigasatutiga.com' // Replace with your Angular frontend's URL
 }));
 
 const scrapeTheVerge = async () => {

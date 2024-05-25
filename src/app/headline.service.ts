@@ -12,7 +12,7 @@ interface Headline {
   providedIn: 'root'
 })
 export class HeadlineService {
-  private apiUrl = 'http://54.255.169.176:3000/api/headlines';
+  private apiUrl = 'https://tigasatutiga.com/api/headlines';
 
   constructor(private http: HttpClient) {}
 
