@@ -27,10 +27,12 @@ jobs:
         cache: 'npm'
     - name: Change to back end directory
       run: cd backend
-    - name: Install dependencies backend
-      run: npm install
-    - name: Restart PM2 on server.js file
-      run: pm2 restart 0
+    # - name: Install dependencies backend
+    #   run: npm install
+    # - name: Restart PM2 on server.js file
+    #   run: pm2 restart 0
+    - name: Check dir
+      run: pwd
     - name: Change back to project directory
       run: cd ..
     - name: Install dependencies
@@ -41,6 +43,8 @@ jobs:
       run: docker rm nginx --force
     - name: Change to nginx directory
       run: cd /home/ubuntu/nginx
+    - name: Check dir
+      run: pwd
     - name: Start nginx container
       run: docker compose up -d
 
