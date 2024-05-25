@@ -26,11 +26,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Change to back end directory
-      run: cd backend
+      # run: cd backend
+      working-directory: ./backend
     # - name: Install dependencies backend
-    #   run: npm install
-    # - name: Restart PM2 on server.js file
-    #   run: pm2 restart 0
+      run: npm install
+    - name: Restart PM2 on server.js file
+      run: pm2 restart 0
     - name: Check dir
       run: pwd
     - name: Change back to project directory
@@ -43,8 +44,9 @@ jobs:
       run: docker rm nginx --force
     - name: Change to nginx directory
       run: cd /home/ubuntu/nginx
-    - name: Check dir
-      run: pwd
+    # - name: Check dir
+    #   run: pwd
     - name: Start nginx container
+      working-directory: /home/ubuntu/nginx
       run: docker compose up -d
 
