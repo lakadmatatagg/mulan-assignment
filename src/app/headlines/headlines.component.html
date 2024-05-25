@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Article Titles from The Verge</h1>
+  <h1>Article Titles from Mashable</h1>
   <div *ngFor="let headline of headlines" class="headline">
     <a [href]="headline.link" target="_blank">{{ headline.title }}</a>
     <div class="date">{{ headline.date | date:'mediumDate' }}</div>
